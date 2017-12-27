@@ -1,10 +1,49 @@
-So apparently this is how all the cool kids are doing their readme's this day
+* README
+the javascript ecosystem is hostile territory, here is a survival project
+
 ** Overview                                                             :TOC:
+- [[#readme][README]]
 - [[#environment][Environment]]
-- [[#utilities][Utilities]]
-- [[#snippets][Snippets]]
+  - [[#packagejson][package.json]]
+  - [[#indexhtml][index.html]]
 
 * Environment
-* Utilities
-* Snippets
+** package.json
+   #+BEGIN_SRC json :tangle package.json
+     {
+       "name": "vxe.js",
+       "version": "0.0.1",
+       "description": "all the javascripts",
+       "main": "index.js",
+       "scripts": {
+	 "test": "none"
+       },
+       "repository": {
+	 "type": "git",
+	 "url": "git+https://github.com/vxe/vxe.js.git"
+       },
+       "author": "vijay edwin",
+       "license": "GPL-3.0",
+       "bugs": {
+	 "url": "https://github.com/vxe/vxe.js/issues"
+       },
+	 "homepage": "https://github.com/vxe/vxe.js#readme",
+	 "dependencies": {
+	     "jquery" : "3.2.1",
+	     "underscore" : "1.8.3"
+	 }
+     }
+
+   #+END_SRC
+** index.html
+   #+BEGIN_SRC html :tangle index.html
+     <html>
+       <head>
+	 <script src="./javascript/bundle.js"></script>
+       </head>
+       <body>
+       </body>
+     </html>
+   #+END_SRC
+
 

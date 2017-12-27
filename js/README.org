@@ -1,0 +1,75 @@
+I *hate* the javascript ecosystem, this is my attempt to make sense of the chaos
+** Overview                                                             :TOC:
+- [[#building][Building]]
+  - [[#command-to-browserify-javascripts][command to browserify javascripts]]
+- [[#dependencies][Dependencies]]
+  - [[#directory-organization][Directory organization]]
+    - [[#top-level][top level]]
+    - [[#react-apps][react apps]]
+- [[#implementation][Implementation]]
+  - [[#utilities][Utilities]]
+  - [[#snippets][Snippets]]
+
+* Building
+  ok so the main thing you really need to do is to take a bunch of
+  javascript files, who cares how or what produced them and combine
+  them into a single file which will get loaded by an index.html.  The
+  tool of choice for this seems to be browserfy and the most obvious
+  was to this is with a shell script
+
+  #+BEGIN_SRC shell
+    if [[ -e bundle.js ]]; then rm bundle.js ;fi
+    find . -name *js | while read javascripts; do browserfy \$javascripts >> bundle.js;
+    stat bundle.js;
+  #+END_SRC
+
+  #+RESULTS:
+
+
+  then in your index.html which is one directory up from this one
+  
+  #+BEGIN_SRC html
+  <script src="bundle.js"></script>
+  #+END_SRC
+
+  and boom, you got javascript.
+
+** command to browserify javascripts
+   need to turn this into an elisp function and potentially an entire
+   package to deal with this madness
+   #+BEGIN_SRC shell
+   if [[ -e bundle.js ]]; then rm -f bundle.js; fi
+   find . -maxdepth 1  -name \*.js | xargs browserify -o bundle.js 
+   stat bundle.js
+   #+END_SRC
+
+   #+RESULTS:
+   : Dec 27 11:07:08 2017" "Dec 27 11:07:08 2017" "Dec 27 11:07:08 2017" "Dec 27 11:07:08 2017
+
+* Dependencies
+  oh my freaking lord this is sooo bad, there's like 3 dependency
+  managers, non of which do exactly what you want
+  
+  So the tactic we are going to take is leveraging directory
+  structure, browserify, node_modules, and letting react apps do their
+  own thing, which in a twisted way kind of makes sense
+** Directory organization
+   ok so everything that is plain javascript no dependencies shall live
+   in the top level
+*** top level
+     anything that uses use node browser modules will simply be placed
+     here, and we shall require things left and right without putting
+     any thought into how it will be packaged for the browser
+
+     then using that browserify script from earlier we will smash it
+     all together into a single bundle.js which gets loaded in a
+     script tag.  We get some checking of local module existence by
+     browserify however we will also need spec out exactly what is
+     needed in the package.json so make sure everything is in sync
+*** react apps
+    individual react apps, which are basically individual pages, live
+    self contained application directories.  Individual pages will
+    load them as needed by pointing directly to their entry point.
+* Implementation
+** Utilities
+** Snippets

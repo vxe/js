@@ -6,6 +6,8 @@ the javascript ecosystem is hostile territory, here is a survival project
 - [[#environment][Environment]]
   - [[#packagejson][package.json]]
   - [[#indexhtml][index.html]]
+  - [[#javascripts][javascripts]]
+  - [[#css][css]]
 
 * Environment
 ** package.json
@@ -45,5 +47,5 @@ the javascript ecosystem is hostile territory, here is a survival project
        </body>
      </html>
    #+END_SRC
-
-
+** [[file:js/README.org][javascripts]] 
+** [[file:css/README.org][css]]

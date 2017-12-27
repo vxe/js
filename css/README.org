@@ -1,0 +1,20 @@
+Ok, so I really have no idea how to do css, fuck ruby I'm not using
+any of the scss/less/*ss stuff under any circumstances.
+
+
+** overview                                                             :TOC:
+- [[#summary-of-way-to-do-css-these-days][Summary of Way to do CSS these days:]]
+  - [[#just-write-css][just write css]]
+  - [[#rework][rework]]
+  - [[#stylus][stylus]]
+
+* Summary of Way to do CSS these days:
+** just write css
+   I mean its not that bad, and you've not got smartparens in emacs to
+   curly braces and cutting and pasting are trivial
+** rework
+   idk why this is good, but saw a tutorial and there didn't seem to
+   be a lot of lines needed to generate the css
+** stylus
+   this is apparently the more popular tool, I have literally no more
+   information on it

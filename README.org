@@ -32,7 +32,8 @@ the javascript ecosystem is hostile territory, here is a survival project
 	 "homepage": "https://github.com/vxe/vxe.js#readme",
 	 "dependencies": {
 	     "jquery" : "3.2.1",
-	     "underscore" : "1.8.3"
+	     "underscore" : "1.8.3",
+	     "stylus" : "0.54.5"
 	 }
      }
 

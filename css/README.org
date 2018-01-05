@@ -7,6 +7,7 @@ any of the scss/less/*ss stuff under any circumstances.
   - [[#just-write-css][just write css]]
   - [[#rework][rework]]
   - [[#stylus][stylus]]
+- [[#and-the-winner-is-][And the winner is ?]]
 
 * Summary of Way to do CSS these days:
 ** just write css
@@ -18,3 +19,6 @@ any of the scss/less/*ss stuff under any circumstances.
 ** stylus
    this is apparently the more popular tool, I have literally no more
    information on it
+* And the winner is ?
+  stylus, and here's why.  Literally the simplicity of this command is
+  the only reason I am choosing it 

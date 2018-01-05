@@ -5,8 +5,9 @@ the javascript ecosystem is hostile territory, here is a survival project
 - [[#readme][README]]
 - [[#environment][Environment]]
   - [[#packagejson][package.json]]
+  - [[#ternproject][.tern.project]]
   - [[#indexhtml][index.html]]
-  - [[#javascripts][javascripts]]
+  - [[#javascript][javascript]]
   - [[#css][css]]
 
 * Environment
@@ -32,10 +33,31 @@ the javascript ecosystem is hostile territory, here is a survival project
 	 "homepage": "https://github.com/vxe/vxe.js#readme",
 	 "dependencies": {
 	     "jquery" : "3.2.1",
-	     "underscore" : "1.8.3"
+	     "underscore" : "1.8.3",
+	     "stylus" : "0.54.5",
+	     "moment" : "2.20.1"
 	 }
      }
 
+   #+END_SRC
+** .tern.project
+   #+BEGIN_SRC json :tangle .tern-project
+     {
+	 "libs": [
+	     "browser",
+	     "jquery",
+	     "underscore",
+	     "stylus",
+	     "moment"
+	 ],
+	 "plugins" : {
+	     "requirejs" : {
+		 "baseURL" : "./" ,
+		 "paths" : {}
+	     },
+	     "node" : {}
+	 }
+     }
    #+END_SRC
 ** index.html
    #+BEGIN_SRC html :tangle index.html
@@ -47,5 +69,6 @@ the javascript ecosystem is hostile territory, here is a survival project
        </body>
      </html>
    #+END_SRC
-** [[file:js/README.org][javascripts]] 
+
+** [[file:js/README.org][javascript]]
 ** [[file:css/README.org][css]]

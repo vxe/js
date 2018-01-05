@@ -1,0 +1,16 @@
+{
+    "libs": [
+	"browser",
+	"jquery",
+	"underscore",
+	"stylus",
+	"moment"
+    ],
+    "plugins" : {
+	"requirejs" : {
+	    "baseURL" : "./" ,
+	    "paths" : {}
+	},
+	"node" : {}
+    }
+}

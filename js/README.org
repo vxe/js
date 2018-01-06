@@ -13,6 +13,7 @@ I *hate* the javascript ecosystem, this is my attempt to make sense of the chaos
   - [[#utilities][Utilities]]
     - [[#cd][cd]]
     - [[#ls][ls]]
+    - [[#pwd][pwd]]
   - [[#snippets][Snippets]]
 
 * Building
@@ -93,15 +94,24 @@ I *hate* the javascript ecosystem, this is my attempt to make sense of the chaos
 *** cd 
     #+BEGIN_SRC javascript :tangle vxe.js
       function cd (dir){
-	  var HOME = process.env.HOME
-	  var path_match = /(~\/)(.*)/
-	  var clean_dir = dir.match(path_match)
+	  var HOME = process.env.HOME;
+	  var path_match = /(~\/)(.*)/;
+	  var clean_dir = dir.match(path_match);
 
-	  process.chdir(HOME + '/' + clean_dir[2])
+	  process.chdir(HOME + '/' + clean_dir[2]);
       }
     #+END_SRC
 *** ls
     #+BEGIN_SRC javascript :tangle vxe.js
-   
+      function ls(){
+	  return fs.readdirSync(".");
+      }   
     #+END_SRC
+*** pwd
+    #+BEGIN_SRC javascript :tangle vxe.js
+  function pwd (){
+      return process.env.PWD ;
+  }
+#+END_SRC
+
 ** Snippets

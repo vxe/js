@@ -6,9 +6,11 @@ the javascript ecosystem is hostile territory, here is a survival project
 - [[#environment][Environment]]
   - [[#packagejson][package.json]]
   - [[#ternproject][.tern.project]]
+    - [[#potentially-broken][potentially broken]]
+    - [[#sample-from-tern][sample from tern]]
   - [[#indexhtml][index.html]]
-  - [[#javascript][javascript]]
-  - [[#css][css]]
+- [[#javascript][javascript]]
+- [[#css][css]]
 
 * Environment
 ** package.json
@@ -41,24 +43,38 @@ the javascript ecosystem is hostile territory, here is a survival project
 
    #+END_SRC
 ** .tern.project
-   #+BEGIN_SRC json :tangle .tern-project
-     {
-	 "libs": [
-	     "browser",
-	     "jquery",
-	     "underscore",
-	     "stylus",
-	     "moment"
-	 ],
-	 "plugins" : {
-	     "requirejs" : {
-		 "baseURL" : "./" ,
-		 "paths" : {}
-	     },
-	     "node" : {}
-	 }
-     }
-   #+END_SRC
+*** potentially broken
+    #+BEGIN_SRC json :tangle .tern-project
+      {
+	  "libs": [
+	      "browser",
+	      "jquery",
+	      "underscore",
+	      "stylus",
+	      "moment"
+	  ],
+	  "plugins" : {
+	      "requirejs" : {
+		  "baseURL" : "./" ,
+		  "paths" : {}
+	      },
+	      "node" : {}
+	  }
+      }
+    #+END_SRC
+*** sample from tern
+ #+BEGIN_SRC 
+ {
+   "libs": [
+   ],
+   "plugins": {
+     "node": {},
+     "complete_strings": {}
+   }
+ }
+ #+END_SRC
+
+
 ** index.html
    #+BEGIN_SRC html :tangle index.html
      <html>
@@ -70,5 +86,5 @@ the javascript ecosystem is hostile territory, here is a survival project
      </html>
    #+END_SRC
 
-** [[file:js/README.org][javascript]]
-** [[file:css/README.org][css]]
+* [[file:js/README.org][javascript]]
+* [[file:css/README.org][css]]
